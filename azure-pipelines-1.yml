@@ -20,7 +20,7 @@ variables:
   imagePullSecret: 'kontainer1759c139-auth'
 
   # Agent VM image name
-  vmImageName: 'pool'
+ 
 
 
 stages:
@@ -30,7 +30,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: $(vmImageName)
+     ADO-AgentPool
     steps:
     - task: Docker@2
       displayName: Build and push an image to container registry
@@ -53,7 +53,7 @@ stages:
   - deployment: Deploy
     displayName: Deploy
     pool:
-      vmImage: $(vmImageName)
+      ADO-AgentPool
     environment: 'odhigboisaacaksretracttemp-1734.default'
     strategy:
       runOnce:

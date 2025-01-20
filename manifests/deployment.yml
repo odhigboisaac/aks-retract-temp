@@ -12,6 +12,11 @@ spec:
       labels:
         app: app1nginxaks 
     spec:
+      tolerations: 
+        - key: "CriticalAddonsOnly"
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
       containers:
         - name: app1nginxaks 
           image: kontainer.azurecr.io/app1nginxaks
